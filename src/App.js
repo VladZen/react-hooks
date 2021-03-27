@@ -1,6 +1,8 @@
+import { renderRoutes } from 'react-router-config'
+
 import Header from './components/Header'
 
-function App() {
+function App({ route }) {
   const heading = 'Your stations'
 
   return (
@@ -8,7 +10,7 @@ function App() {
       <Header heading={ heading } />
 
       <main className="layout__main">
-
+        { renderRoutes(route.routes) }
       </main>
     </div>
   )

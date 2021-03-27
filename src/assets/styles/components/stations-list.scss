@@ -1,0 +1,38 @@
+.stations {
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: $base-radius;
+    padding: 0 $base-offset * 2;
+    min-height: $base-offset * 8;
+
+    &__name {
+      font-weight: 700;
+    }
+
+    &__status {
+      display:inline-flex;
+      align-items: baseline;
+      font-size: 75%;
+      min-width: 102px;
+      border-radius: $base-radius * 1.5;
+      background-color: $body-color;
+      padding: 2px 9px;
+
+      &__icon {
+        display: inline-block;
+        align-self: center;
+        background-size: contain;
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+      }
+    }
+
+    & + & {
+      margin-top: $base-offset;
+    }
+  }
+}

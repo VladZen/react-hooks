@@ -1,3 +1,4 @@
+import '../../assets/styles/components/stations-list.scss'
 import Station from './StationsListItem'
 
 const fakeList = [

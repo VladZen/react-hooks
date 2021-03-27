@@ -1,0 +1,17 @@
+.station-attributes {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: #fff;
+  min-height: 447px;
+  padding: 10px 14px;
+
+  &__item {
+    flex-basis: 25%;
+    padding: 10px 10px 22px 10px;
+
+    &__label {
+      color: $label-color;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+import '../../assets/styles/components/stations-view.scss'
+
 const StationView = () => {
   return (
     <dl className='station-attributes'>

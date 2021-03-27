@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import Icon from "./Icon";
 
 const Header = ({ heading }) => {
   return (

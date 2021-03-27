@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
 
-export default function () {
-  return PropTypes.oneOf([1, 0])
-}
+const EnumType = () => PropTypes.oneOf([1, 0])
+
+export default EnumType

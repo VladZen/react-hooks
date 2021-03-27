@@ -2,18 +2,24 @@ import PropTypes from 'prop-types'
 import Enum from '@utils/PropTypeEnum'
 
 import Status from '@components/stations-list/StationStatus.js'
+import { Link } from 'react-router-dom'
 
 const StationsListItem = ({ data }) => {
   const {
     available,
-    name
+    name,
+    station_ID
   } = data
 
   return (
+
     <li className='stations__item'>
-      <span className='stations__item__name'>
+      <Link
+        className='stations__item__name'
+        to={ `/${station_ID}` }
+      >
         { name }
-      </span>
+      </Link>
 
       <Status available={ available } />
     </li>

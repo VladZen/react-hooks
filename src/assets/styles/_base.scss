@@ -39,6 +39,17 @@ h1 {
   font-weight: 700;
 }
 
+a {
+  color: inherit;
+  cursor: pointer;
+  transition: color .15s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: $label-color;
+  }
+}
+
 .hidden {
   display: none;
 }

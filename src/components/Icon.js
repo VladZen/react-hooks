@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import sprite from '../assets/img/sprite.svg'
+import sprite from '@images/sprite.svg'
 
 const Icon = ({ alias, className }) => {
   return (

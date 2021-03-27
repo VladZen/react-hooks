@@ -1,4 +1,4 @@
-import '../assets/styles/components/station-view.scss'
+import '@styles/components/station-view.scss'
 
 const StationView = () => {
   return (

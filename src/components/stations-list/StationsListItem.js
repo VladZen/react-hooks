@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import Enum from '../../utils/PropTypeEnum'
+import Enum from '@utils/PropTypeEnum'
 
-import Status from './StationStatus.js'
+import Status from '@components/stations-list/StationStatus.js'
 
 const StationsListItem = ({ data }) => {
   const {

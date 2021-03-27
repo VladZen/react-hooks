@@ -1,6 +1,6 @@
-import Enum from '../../utils/PropTypeEnum'
+import Enum from '@utils/PropTypeEnum'
 
-import Icon from '../Icon'
+import Icon from '@components/Icon'
 
 const StationStatus = ({ available }) => {
   const status = available

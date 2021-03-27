@@ -1,5 +1,5 @@
-import '../../assets/styles/components/stations-list.scss'
-import Station from './StationsListItem'
+import '@styles/components/stations-list.scss'
+import Station from '@components/stations-list/StationsListItem'
 
 const fakeList = [
   {

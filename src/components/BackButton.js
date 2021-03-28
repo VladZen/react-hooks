@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 import Icon from '@components/Icon'
 
-const BackButton = () => {
+const BackButton = (props) => {
   return (
     <Link
       className='back-button'
-      to='/'
+      {...props}
     >
       <Icon
         alias='arrow'

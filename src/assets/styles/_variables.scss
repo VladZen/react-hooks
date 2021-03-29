@@ -10,7 +10,7 @@ $base-offset:          8px;
 $content-width:        ($base-offset * 2) + 608px;
 $header-height:        100px;
 $base-radius:          $base-offset;
-$layout-bottom-offset: 20px;
+$layout-bottom-offset: $base-offset;
 
 // typography
 $h1-size:          48px;

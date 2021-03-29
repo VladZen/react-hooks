@@ -1,4 +1,4 @@
-import Enum from '@utils/PropTypeEnum'
+import Enum from '@types/PropTypeEnum'
 
 import Icon from '@components/Icon'
 

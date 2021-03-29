@@ -1,18 +1,20 @@
 import '@styles/components/stations-list.scss'
 import Station from '@components/stations-list/StationsListItem'
 
-// temp
-import stations from '../../mock.json'
-
-const StationsList = () => {
+const StationsList = ({ stations }) => {
   return (
     <ul className='stations'>
-      {stations.map((station) => (
-        <Station
-          key={ station.station_ID }
-          data={ station }
-        />
-      ))}
+      { stations.length
+        ? stations.map((station) => (
+          <Station
+            key={ station.station_ID }
+            station={ station }
+          />
+        ))
+        : <li className='text-center'>
+          There are no stations in the list
+        </li>
+      }
     </ul>
   )
 }

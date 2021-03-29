@@ -1,22 +1,21 @@
-import PropTypes from 'prop-types'
-import Enum from '@utils/PropTypeEnum'
+import StationType from '@types/Station'
 
 import Status from '@components/stations-list/StationStatus.js'
 import { Link } from 'react-router-dom'
 
-const StationsListItem = ({ data }) => {
+const StationsListItem = ({ station }) => {
   const {
     available,
     name,
     station_ID
-  } = data
+  } = station
 
   return (
-
     <li className='stations__item'>
       <Link
         className='stations__item__name'
-        to={ `/${station_ID}` }
+        title={ name }
+        to={ `/stations/${station_ID}` }
       >
         { name }
       </Link>
@@ -27,21 +26,7 @@ const StationsListItem = ({ data }) => {
 }
 
 StationsListItem.propTypes = {
-  data: PropTypes.shape({
-    'station_ID': PropTypes.number,
-    'custom_evse_id': PropTypes.any, // temp: don't know what else types it could be of
-    'location_ID': PropTypes.number,
-    'seller_ID': PropTypes.number,
-    'name': PropTypes.string,
-    'connected': Enum(),
-    'position': PropTypes.string, // could be improved to support coordinates
-    'available': Enum(),
-    'lastconnect': PropTypes.string, // could be improved to support date
-    'roaming_identifier_cpo': PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(null)
-    ])
-  })
+  data: StationType
 }
 
 export default StationsListItem

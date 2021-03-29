@@ -1,69 +1,24 @@
+import StationType from '@types/Station'
+
 import '@styles/components/station-view.scss'
 
-const StationView = () => {
+const StationView = ({ station }) => {
   return (
     <dl className='station-attributes'>
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
-
-      <div className='station-attributes__item'>
-        <dt className='station-attributes__item__label'>Label</dt>
-        <dd className='station-attributes__item__value'>Value</dd>
-      </div>
+      {
+        Object.keys(station).map((key) => (
+          <div className='station-attributes__item' key={ key }>
+            <dt className='station-attributes__item__label'>{ key }</dt>
+            <dd className='station-attributes__item__value'>{ `${station[key]}` }</dd>
+          </div>
+        ))
+      }
     </dl>
   )
+}
+
+StationView.propTypes = {
+  station: StationType
 }
 
 export default StationView

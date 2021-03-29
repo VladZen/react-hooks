@@ -1,6 +1,6 @@
-import StationType from '@types/Station'
+import StationType from '@/types/Station'
 
-import Status from '@components/stations-list/StationStatus.js'
+import Status from '@/components/stations-list/StationStatus.js'
 import { Link } from 'react-router-dom'
 
 const StationsListItem = ({ station }) => {

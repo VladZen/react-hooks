@@ -1,4 +1,4 @@
-import StationType from '@types/Station'
+import StationType from '@/types/Station'
 
 import '@styles/components/station-view.scss'
 

@@ -11,4 +11,9 @@
     height: $header-height;
     margin-bottom: 48px;
   }
+
+  &__loading {
+    align-items: center;
+    justify-content: center;
+  }
 }

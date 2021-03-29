@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Enum from '@types/PropTypeEnum'
+import Enum from '@/types/PropTypeEnum'
 
 const StationType = PropTypes.shape({
   'station_ID': PropTypes.number,

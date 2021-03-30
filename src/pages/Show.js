@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { Redirect, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { useStationsContext } from '@/contexts/useStations'
 
@@ -8,6 +8,7 @@ import Header from '@/components/Header'
 import StationView from '@/components/StationView'
 import Back from '@/components/BackButton'
 import Loading from '@/components/Loading'
+import Page404 from '@/pages/Page404'
 
 const Show = () => {
   const {
@@ -20,7 +21,7 @@ const Show = () => {
   } = useParams()
 
   const station = useMemo(
-    () => stations.find(({ station_ID }) => station_ID === parseInt(stationID)),
+    () => stations.find(({ station_ID }) => station_ID === +stationID),
     [stations, stationID]
   )
 
@@ -29,10 +30,13 @@ const Show = () => {
       <Loading trigger={isLoading}>
         {
           !station
-            ? <Redirect to='/' />
+            ? <Page404 />
             : <>
               <Header heading={ station.name }>
-                <Back to='/' />
+                <Back
+                  to='/'
+                  title='Back to the list'
+                />
               </Header>
 
               <main className='layout__main'>

@@ -1,14 +1,24 @@
-import Header from '@components/Header'
-import StationsList from '@components/stations-list/StationsList'
+import { useStationsContext } from '@/contexts/useStations'
 
-function Index() {
+import Header from '@/components/Header'
+import StationsList from '@/components/stations-list/StationsList'
+import Loading from '@/components/Loading'
+
+const Index = () => {
+  const {
+    isLoading,
+    stations
+  } = useStationsContext()
+
   return (
     <div className='layout'>
-      <Header heading='Your stations' />
+      <Loading trigger={isLoading}>
+        <Header heading='Your stations' />
 
-      <main className='layout__main'>
-        <StationsList />
-      </main>
+        <main className='layout__main'>
+          <StationsList stations={ stations } />
+        </main>
+      </Loading>
     </div>
   )
 }

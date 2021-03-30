@@ -1,32 +1,48 @@
-import Header from '@components/Header'
-import StationView from '@components/StationView'
-import Back from '@components/BackButton'
+import { useMemo } from 'react'
 
-function Index() {
-  const station = {
-    'station_ID': 101,
-    'custom_evse_id': null,
-    'location_ID': 101,
-    'seller_ID': 27,
-    'name': 'Endesa',
-    'connected': 1,
-    'position': '60.868623,26.702901',
-    'available': 0,
-    'lastconnect': '2019-02-22T13:35:48.000Z',
-    'roaming_identifier_cpo': 'FI*001'
-  }
+import { Redirect, useParams } from 'react-router-dom'
+
+import { useStationsContext } from '@/contexts/useStations'
+
+import Header from '@/components/Header'
+import StationView from '@/components/StationView'
+import Back from '@/components/BackButton'
+import Loading from '@/components/Loading'
+
+const Show = () => {
+  const {
+    isLoading,
+    stations
+  } = useStationsContext()
+
+  const {
+    stationID
+  } = useParams()
+
+  const station = useMemo(
+    () => stations.find(({ station_ID }) => station_ID === parseInt(stationID)),
+    [stations, stationID]
+  )
 
   return (
     <div className='layout'>
-      <Header heading={station.name}>
-        <Back to='/' />
-      </Header>
+      <Loading trigger={isLoading}>
+        {
+          !station
+            ? <Redirect to='/' />
+            : <>
+              <Header heading={ station.name }>
+                <Back to='/' />
+              </Header>
 
-      <main className='layout__main'>
-        <StationView data={station} />
-      </main>
+              <main className='layout__main'>
+                <StationView station={ station } />
+              </main>
+            </>
+        }
+      </Loading>
     </div>
   )
 }
 
-export default Index
+export default Show

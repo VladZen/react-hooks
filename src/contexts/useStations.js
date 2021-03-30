@@ -1,34 +1,69 @@
-import { useState, useCallback } from 'react'
+import { useMemo, useCallback, useReducer, useRef, useEffect } from 'react'
 import constate from 'constate'
 
 import Api from '@/api/Stations'
 
-const useStations = () => {
-  const [stationsAreLoading, setLoading] = useState(false)
-  const [stations, setStations] = useState([])
+const initialState = {
+  status: 'idle',
+  error: null,
+  stations: []
+}
 
-  const fetchStations = useCallback(async () => {
-    setLoading(true)
-    try {
-      const { data: stations } = await Api.getList()
-      setStations(stations)
-    } catch (e) {
-      console.log(e)
-    } finally {
-      setLoading(false)
+const useStations = () => {
+  const cache = useRef([])
+
+  const [state, dispatch] = useReducer((state, action) => {
+    switch (action.type) {
+      case 'FETCHING':
+        return { ...initialState, status: 'fetching' }
+      case 'FETCHED':
+        return { ...initialState, status: 'fetched', stations: action.payload }
+      case 'FETCH_ERROR':
+        return { ...initialState, status: 'error', error: action.payload }
+      default:
+        return state
     }
+  }, initialState)
+
+  const isLoading = useMemo(() => !['fetched', 'error'].includes(state.status), [state.status])
+
+  const fetchStations = useCallback(() => {
+    return Api.asSubscription({
+      promise: Api.getList,
+      successCb (stations) {
+        cache.current = stations
+        dispatch({ type: 'FETCHED', payload: stations })
+      },
+      failCb (e) {
+        dispatch({ type: 'FETCH_ERROR', payload: e.message })
+      }
+    })
   }, [])
 
-  const getStation = async (id) => {
-    if (!stations.length) await fetchStations()
-    return stations.find(({ station_ID }) => station_ID === id)
-  }
+  useEffect(() => {
+    const {
+      subscribe,
+      unsubscribe
+    } = fetchStations()
+
+    const fetchData = async () => {
+      dispatch({ type: 'FETCHING' })
+      if (cache.current.length) {
+        const data = cache.current
+        dispatch({ type: 'FETCHED', payload: data })
+      } else await subscribe()
+    }
+
+    fetchData()
+
+    return () => {
+      unsubscribe()
+    }
+  }, [cache, fetchStations])
 
   return {
-    stations,
-    getStation,
-    fetchStations,
-    stationsAreLoading
+    stations: state.stations,
+    isLoading
   }
 }
 

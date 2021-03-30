@@ -8,7 +8,7 @@ const Header = ({ heading, children }) => {
   return (
     <header className='layout__header'>
       { buttons }
-      <h1>{ heading }</h1>
+      <h1 className='text-ellipsis'>{ heading }</h1>
     </header>
   )
 }

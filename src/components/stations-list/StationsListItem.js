@@ -13,7 +13,7 @@ const StationsListItem = ({ station }) => {
   return (
     <li className='stations__item'>
       <Link
-        className='stations__item__name'
+        className='stations__item__name text-ellipsis'
         title={ name }
         to={ `/stations/${station_ID}` }
       >

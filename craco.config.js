@@ -18,7 +18,8 @@ module.exports = {
       moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',
         '^@images(.*)$': '<rootDir>/src/assets/img/$1',
-        '^@styles(.*)$': '<rootDir>/src/assets/styles/$1'
+        '^@styles(.*)$': '<rootDir>/src/assets/styles/$1',
+        'mock.json': '<rootDir>/mock.json'
       }
     }
   }

@@ -1,47 +1,29 @@
-import { render, screen, waitFor } from '@testing-library/react'
-import { useMemo } from 'react'
+import { renderHook, act } from '@testing-library/react-hooks'
 import { StationsProvider, useStationsContext } from '@/contexts/useStations'
+import axios from 'axios'
 
 import mock from 'mock.json'
 
-const axios = global.axiosMock()
+const axiosMock = global.axiosMock()
 
-axios.onGet('/stations').reply(200, mock.stations)
-
-const SomeTestComponent = () => {
-  const {
-    isLoading,
-    stations
-  } = useStationsContext()
-
-  const data = useMemo(() => JSON.stringify(stations, null, 2), [stations])
-
-  return (
-    <div data-testid='json'>
-      <div id='data'>
-        { data }
-      </div>
-
-      <div id='loading'>
-        { isLoading ? 'loading' : 'loaded' }
-      </div>
-    </div>
-  )
-}
+axiosMock.onGet('http://localhost:5000/stations/').reply(200, mock.stations)
 
 afterAll(() => {
-  axios.restore()
+  axiosMock.restore()
 })
 
 describe('useStations context', () => {
   it('return stations and isLoading flag', async () => {
-    render(
-      <StationsProvider></StationsProvider>
-    )
+    const get = jest.spyOn(axios, 'get')
+    const wrapper = ({ children }) => <StationsProvider>{children}</StationsProvider>
+    const { result, waitForNextUpdate, rerender, unmount } = renderHook(() => useStationsContext(), { wrapper })
 
-    await waitFor(() => {
-      expect(screen.getByTestId('json')).toMatchSnapshot()
-    })
+    await waitForNextUpdate()
+
+    expect(get.mock.calls.length).toBe(1)
+    expect(result.current.stations).toEqual(mock.stations)
+
+    get.mockRestore()
   })
 })
 

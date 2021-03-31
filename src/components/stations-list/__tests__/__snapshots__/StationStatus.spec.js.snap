@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StationStatus component rendering available 1`] = `
+<div>
+  <span
+    class="stations__item__status stations__item__status--offline"
+  >
+    <svg
+      class="stations__item__status__icon"
+    >
+      <use
+        href="sprite.svg#available"
+      />
+    </svg>
+    <span
+      class="text-capitalize"
+    >
+      available
+    </span>
+  </span>
+</div>
+`;
+
+exports[`StationStatus component rendering offline 1`] = `
+<div>
+  <span
+    class="stations__item__status stations__item__status--offline"
+  >
+    <svg
+      class="stations__item__status__icon"
+    >
+      <use
+        href="sprite.svg#offline"
+      />
+    </svg>
+    <span
+      class="text-capitalize"
+    >
+      offline
+    </span>
+  </span>
+</div>
+`;

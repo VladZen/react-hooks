@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StationListItem component rendering empty list 1`] = `
+<div>
+  <ul
+    class="stations"
+  >
+    <li
+      class="text-center"
+    >
+      There are no stations in the list
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`StationListItem component rendering with items 1`] = `
+<div>
+  <ul
+    class="stations"
+  >
+    <li
+      data-testid="list-item"
+    >
+      Endesa 2
+    </li>
+    <li
+      data-testid="list-item"
+    >
+      Endesa 2
+    </li>
+  </ul>
+</div>
+`;

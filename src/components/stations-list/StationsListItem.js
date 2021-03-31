@@ -26,7 +26,7 @@ const StationsListItem = ({ station }) => {
 }
 
 StationsListItem.propTypes = {
-  data: StationType
+  station: StationType
 }
 
 export default StationsListItem

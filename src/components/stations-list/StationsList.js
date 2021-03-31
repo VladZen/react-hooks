@@ -1,10 +1,14 @@
+import PropTypes from 'prop-types'
+import StationType from '@/types/Station'
+
 import '@styles/components/stations-list.scss'
 import Station from '@/components/stations-list/StationsListItem'
+import StationsListItem from "./StationsListItem";
 
 const StationsList = ({ stations }) => {
   return (
     <ul className='stations'>
-      { stations.length
+      { stations && stations.length
         ? stations.map((station) => (
           <Station
             key={ station.station_ID }
@@ -17,6 +21,10 @@ const StationsList = ({ stations }) => {
       }
     </ul>
   )
+}
+
+StationsListItem.propTypes = {
+  stations: PropTypes.arrayOf(StationType)
 }
 
 export default StationsList

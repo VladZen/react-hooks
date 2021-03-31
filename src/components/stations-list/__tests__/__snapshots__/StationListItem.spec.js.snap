@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StationListItem component rendering available 1`] = `
+<div>
+  <li
+    class="stations__item"
+  >
+    <a
+      class="stations__item__name text-ellipsis"
+      href="/stations/102"
+      title="Endesa 2"
+    >
+      Endesa 2
+    </a>
+    <div
+      data-testid="list-item"
+    >
+      available
+    </div>
+  </li>
+</div>
+`;
+
+exports[`StationListItem component rendering offline 1`] = `
+<div>
+  <li
+    class="stations__item"
+  >
+    <a
+      class="stations__item__name text-ellipsis"
+      href="/stations/103"
+      title="Endesa 2"
+    >
+      Endesa 2
+    </a>
+    <div
+      data-testid="list-item"
+    >
+      offline
+    </div>
+  </li>
+</div>
+`;

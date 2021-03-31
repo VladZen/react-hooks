@@ -1,20 +1,18 @@
 @import "../variables";
 
 .station-attributes {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
   background-color: #fff;
-  min-height: 447px;
   padding: 10px 14px;
 
   &__item {
-    width: 25%;
-    word-break: break-all;
-    padding: 10px 10px 22px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
 
     &__label {
       color: $label-color;
+      padding-right: $base-offset;
     }
   }
 }

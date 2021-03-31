@@ -40,9 +40,10 @@ h1 {
 }
 
 a {
+  display: inline-block;
   color: inherit;
   cursor: pointer;
-  transition: color .15s ease;
+  transition: all .15s ease;
   text-decoration: none;
 
   &:hover {
@@ -65,4 +66,20 @@ a {
 .text-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.text-positive {
+  color: $color-positive;
+}
+
+.text-negative {
+  color: $color-negative;
+}
+
+.link-decorated {
+  border-bottom: 1px solid $text-color;
+
+  &:hover {
+    border-color: transparent;
+  }
 }

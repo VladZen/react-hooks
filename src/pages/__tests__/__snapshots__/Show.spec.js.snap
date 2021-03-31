@@ -1,0 +1,254 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Show page  rendering loaded 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <header
+      class="layout__header"
+    >
+      <div
+        class="layout__header__buttons"
+      >
+        <a
+          class="back-button"
+          href="/"
+          title="Back to the list"
+        >
+          <svg
+            class="back-button__icon"
+          >
+            <use
+              href="sprite.svg#arrow"
+            />
+          </svg>
+        </a>
+      </div>
+      <h1
+        class="text-ellipsis"
+        title="Endesa 3"
+      >
+        Endesa 3
+      </h1>
+    </header>
+    <main
+      class="layout__main"
+    >
+      <dl
+        class="station-attributes"
+      >
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Station ID
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            103
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Custom Evse Id
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            Not detected
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Location ID
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            103
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Seller ID
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            27
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Name
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            Endesa 3
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Connected
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            <span
+              class="text-positive"
+            >
+              Yes
+            </span>
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Position
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            <a
+              class="link-decorated"
+              href="http://www.google.com/maps/place/60.868623,26.702901"
+              target="blank"
+              title="Open in new tab"
+            >
+              Show on the map
+            </a>
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Available
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            <span
+              class="text-negative"
+            >
+              No
+            </span>
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Lastconnect
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            3/26/2019, 9:46:32 AM
+          </dd>
+        </div>
+        <div
+          class="station-attributes__item"
+        >
+          <dt
+            class="station-attributes__item__label"
+          >
+            Roaming Identifier Cpo
+          </dt>
+          <dd
+            class="station-attributes__item__value"
+          >
+            FI*001
+          </dd>
+        </div>
+      </dl>
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Show page  rendering loading 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <div
+      class="spinner"
+    >
+      Loading...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Show page  rendering shows 404 if id is not found 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <div
+      class="layout"
+    >
+      <header
+        class="layout__header"
+      >
+        <div
+          class="layout__header__buttons"
+        >
+          <a
+            class="back-button"
+            href="/"
+            title="Back to the list"
+          >
+            <svg
+              class="back-button__icon"
+            >
+              <use
+                href="sprite.svg#arrow"
+              />
+            </svg>
+          </a>
+        </div>
+        <h1
+          class="text-ellipsis"
+          title="Page Not Found"
+        >
+          Page Not Found
+        </h1>
+      </header>
+    </div>
+  </div>
+</div>
+`;

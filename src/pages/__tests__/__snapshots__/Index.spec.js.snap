@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index page  rendering loaded 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <header
+      class="layout__header"
+    >
+      
+      <h1
+        class="text-ellipsis"
+        title="Your stations"
+      >
+        Your stations
+      </h1>
+    </header>
+    <main
+      class="layout__main"
+    >
+      <ul
+        class="stations"
+      >
+        <li
+          class="stations__item"
+        >
+          <a
+            class="stations__item__name text-ellipsis"
+            href="/stations/103"
+            title="Endesa 3"
+          >
+            Endesa 3
+          </a>
+          <span
+            class="stations__item__status stations__item__status--offline"
+          >
+            <svg
+              class="stations__item__status__icon"
+            >
+              <use
+                href="sprite.svg#offline"
+              />
+            </svg>
+            <span
+              class="text-capitalize"
+            >
+              offline
+            </span>
+          </span>
+        </li>
+        <li
+          class="stations__item"
+        >
+          <a
+            class="stations__item__name text-ellipsis"
+            href="/stations/104"
+            title="Endesa 4"
+          >
+            Endesa 4
+          </a>
+          <span
+            class="stations__item__status stations__item__status--offline"
+          >
+            <svg
+              class="stations__item__status__icon"
+            >
+              <use
+                href="sprite.svg#available"
+              />
+            </svg>
+            <span
+              class="text-capitalize"
+            >
+              available
+            </span>
+          </span>
+        </li>
+      </ul>
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Index page  rendering loading 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <header
+      class="layout__header"
+    >
+      
+      <h1
+        class="text-ellipsis"
+        title="Your stations"
+      >
+        Your stations
+      </h1>
+    </header>
+    <main
+      class="layout__main"
+    >
+      <div
+        class="spinner"
+      >
+        Loading...
+      </div>
+    </main>
+  </div>
+</div>
+`;

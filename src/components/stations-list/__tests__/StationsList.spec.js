@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react'
 import StationsList from '@/components/stations-list/StationsList'
-import MockStationsListItem from '@/components/stations-list/StationsListItem'
 
 jest.mock('@/components/stations-list/StationsListItem', () => {
   return function Mock (props) {

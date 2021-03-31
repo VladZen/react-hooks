@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import StationsListItem from '@/components/stations-list/StationsListItem'
-import MockStatus from '@/components/stations-list/StationStatus'
 
 jest.mock('@/components/stations-list/StationStatus', () => {
   return function Mock (props) {

@@ -10,6 +10,11 @@ module.exports = {
   },
   jest: {
     configure: {
+      collectCoverageFrom: [
+        '**/*.{js,jsx}',
+        '!**/node_modules/**',
+        '!**/vendor/**'
+      ],
       moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',
         '^@images(.*)$': '<rootDir>/src/assets/img/$1',

@@ -3,7 +3,6 @@ import StationType from '@/types/Station'
 
 import '@styles/components/stations-list.scss'
 import Station from '@/components/stations-list/StationsListItem'
-import StationsListItem from "./StationsListItem";
 
 const StationsList = ({ stations }) => {
   return (
@@ -23,7 +22,7 @@ const StationsList = ({ stations }) => {
   )
 }
 
-StationsListItem.propTypes = {
+StationsList.propTypes = {
   stations: PropTypes.arrayOf(StationType)
 }
 

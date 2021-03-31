@@ -24,7 +24,8 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "api": "json-server --watch mock.json --port 5000"
+    "api": "json-server --watch mock.json --port 5000",
+    "coverage": "yarn test -- --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": [

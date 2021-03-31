@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackButton component rendering applies props to the inner link 1`] = `
+<div>
+  <a
+    class="back-button"
+    href="/"
+    title="Some link title"
+  >
+    <svg
+      class="back-button__icon"
+    >
+      <use
+        href="sprite.svg#arrow"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`BackButton component rendering basic 1`] = `
+<div>
+  <a
+    class="back-button"
+    href="/"
+  >
+    <svg
+      class="back-button__icon"
+    >
+      <use
+        href="sprite.svg#arrow"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`BackButton component rendering don't render any children 1`] = `
+<div>
+  <a
+    class="back-button"
+    href="/"
+  >
+    <svg
+      class="back-button__icon"
+    >
+      <use
+        href="sprite.svg#arrow"
+      />
+    </svg>
+  </a>
+</div>
+`;

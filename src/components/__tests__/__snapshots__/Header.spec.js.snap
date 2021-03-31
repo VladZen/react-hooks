@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component rendering with children 1`] = `
+<div>
+  <header
+    class="layout__header"
+  >
+    <div
+      class="layout__header__buttons"
+    >
+      <a
+        href="#"
+      >
+        Some link
+      </a>
+    </div>
+    <h1
+      class="text-ellipsis"
+      title="Some title"
+    >
+      Some title
+    </h1>
+  </header>
+</div>
+`;
+
+exports[`Header component rendering without children 1`] = `
+<div>
+  <header
+    class="layout__header"
+  >
+    
+    <h1
+      class="text-ellipsis"
+      title="Some title"
+    >
+      Some title
+    </h1>
+  </header>
+</div>
+`;

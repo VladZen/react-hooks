@@ -1,6 +1,8 @@
+import '@styles/components/loading.scss'
+
 const Loading = ({ trigger, children, ...props }) => {
   return trigger
-    ? <div {...props}>Loading stations...</div>
+    ? <div className='spinner' {...props}>Loading...</div>
     : children
 }
 

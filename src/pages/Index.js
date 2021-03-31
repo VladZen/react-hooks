@@ -12,13 +12,13 @@ const Index = () => {
 
   return (
     <div className='layout'>
-      <Loading trigger={isLoading}>
-        <Header heading='Your stations' />
+      <Header heading='Your stations' />
 
-        <main className='layout__main'>
+      <main className='layout__main'>
+        <Loading trigger={isLoading}>
           <StationsList stations={ stations } />
-        </main>
-      </Loading>
+        </Loading>
+      </main>
     </div>
   )
 }

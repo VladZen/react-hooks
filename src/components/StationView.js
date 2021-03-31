@@ -1,4 +1,4 @@
-import { startCase, isNull } from 'lodash'
+import { startCase, isNull, isUndefined } from 'lodash'
 
 import StationType from '@/types/Station'
 
@@ -9,7 +9,7 @@ const StationView = ({ station }) => {
     const value = station[key]
 
     // process null
-    if (isNull(value)) return 'Not detected'
+    if (isNull(value) || isUndefined(value)) return 'Not detected'
 
     // process enum
     if ([0, 1].includes(value)) return (

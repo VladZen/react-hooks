@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StationView component should be rendered properly 1`] = `
+<div>
+  <dl
+    class="station-attributes"
+  >
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Station ID
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        102
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Custom Evse Id
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        Not detected
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Location ID
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        102
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Seller ID
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        27
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Name
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        Endesa 2
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Connected
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        <span
+          class="text-positive"
+        >
+          Yes
+        </span>
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Position
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        <a
+          class="link-decorated"
+          href="http://www.google.com/maps/place/60.868623,26.702901"
+          target="blank"
+          title="Open in new tab"
+        >
+          Show on the map
+        </a>
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Available
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        <span
+          class="text-negative"
+        >
+          No
+        </span>
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Lastconnect
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        2/22/2019, 4:36:12 PM
+      </dd>
+    </div>
+    <div
+      class="station-attributes__item"
+    >
+      <dt
+        class="station-attributes__item__label"
+      >
+        Roaming Identifier Cpo
+      </dt>
+      <dd
+        class="station-attributes__item__value"
+      >
+        FI*001
+      </dd>
+    </div>
+  </dl>
+</div>
+`;

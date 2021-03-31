@@ -1,5 +1,4 @@
-import { unmountComponentAtNode, render } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render } from '@testing-library/react'
 import StationsList from '@/components/stations-list/StationsList'
 import MockStationsListItem from '@/components/stations-list/StationsListItem'
 
@@ -11,18 +10,6 @@ jest.mock('@/components/stations-list/StationsListItem', () => {
       </li>
     )
   }
-})
-
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
 })
 
 const mockStations = [
@@ -55,27 +42,17 @@ const mockStations = [
 describe('StationListItem component', () => {
   describe('rendering', () => {
     it('with items', () => {
-      act(() => {
-        render(
-          (
-            <StationsList stations={ mockStations } />
-          ),
-          container
-        )
-      })
+      const { container } = render(
+        <StationsList stations={ mockStations } />
+      )
 
       expect(container).toMatchSnapshot()
     })
 
     it('empty list', () => {
-      act(() => {
-        render(
-          (
-            <StationsList stations={ null } />
-          ),
-          container
-        )
-      })
+      const { container } = render(
+        <StationsList stations={ null } />
+      )
 
       expect(container).toMatchSnapshot()
     })

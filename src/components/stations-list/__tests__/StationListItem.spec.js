@@ -1,6 +1,5 @@
-import { unmountComponentAtNode, render } from 'react-dom'
+import { render } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import { act } from 'react-dom/test-utils'
 import StationsListItem from '@/components/stations-list/StationsListItem'
 import MockStatus from '@/components/stations-list/StationStatus'
 
@@ -12,18 +11,6 @@ jest.mock('@/components/stations-list/StationStatus', () => {
       </div>
     )
   }
-})
-
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
 })
 
 const mockStations = {
@@ -56,16 +43,11 @@ const mockStations = {
 describe('StationListItem component', () => {
   describe('rendering', () => {
     it.each(['available', 'offline'])('%s', (status) => {
-      act(() => {
-        render(
-          (
-            <MemoryRouter>
-              <StationsListItem station={ mockStations[status] } />
-            </MemoryRouter>
-          ),
-          container
-        )
-      })
+      const { container } = render(
+        <MemoryRouter>
+          <StationsListItem station={ mockStations[status] } />
+        </MemoryRouter>
+      )
 
       expect(container).toMatchSnapshot()
     })

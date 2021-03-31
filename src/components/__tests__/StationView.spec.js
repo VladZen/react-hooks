@@ -1,18 +1,5 @@
-import { unmountComponentAtNode, render } from 'react-dom'
-import { act } from 'react-dom/test-utils'
+import { render } from '@testing-library/react'
 import StationView from '@/components/StationView'
-
-let container = null
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-  container = null
-})
 
 const mockStation = {
   'station_ID': 102,
@@ -29,12 +16,9 @@ const mockStation = {
 
 describe('StationView component', () => {
   it('should be rendered properly', () => {
-    act(() => {
-      render(
-        (<StationView station={ mockStation } />),
-        container
-      )
-    })
+    const { container } = render(
+      <StationView station={ mockStation } />
+    )
 
     expect(container).toMatchSnapshot()
   })
